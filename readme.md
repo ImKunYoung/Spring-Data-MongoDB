@@ -156,3 +156,10 @@ public class SpringDataMongoDbApplication {
 - ``@SpringBootApplication``: This annotation is used to enable auto-configuration of the Spring application.
 - ``@EnableMongoRepositories``: This annotation is used to enable MongoDB repositories.
 - ``@RequiredArgsConstructor``: This annotation is used to generate a constructor with required arguments.
+
+<br/>
+
+----
+
+<br/>
+

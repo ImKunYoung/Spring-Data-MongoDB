@@ -1,9 +1,11 @@
 package com.tobias.springdatamongodb.practice;
 
+import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document("groceryItem")
+@Getter
 public class GroceryItem {
 
     @Id
