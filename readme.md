@@ -124,5 +124,35 @@ spring.data.mongodb.database=mygrocerylist
 - ``spring.data.mongodb.uri``: This property is used to specify the MongoDB connection URI.
 - ``spring.data.mongodb.database``: This property is used to specify the MongoDB database name.
 
+<br/>
 
+----
 
+<br/>
+
+```java
+package com.tobias.springdatamongodb;
+
+import com.tobias.springdatamongodb.practice.ItemRepository;
+import lombok.RequiredArgsConstructor;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
+
+@SpringBootApplication
+@EnableMongoRepositories
+@RequiredArgsConstructor
+public class SpringDataMongoDbApplication {
+
+    private final ItemRepository itemRepository;
+
+    public static void main(String[] args) {
+        SpringApplication.run(SpringDataMongoDbApplication.class, args);
+    }
+
+}
+```
+
+- ``@SpringBootApplication``: This annotation is used to enable auto-configuration of the Spring application.
+- ``@EnableMongoRepositories``: This annotation is used to enable MongoDB repositories.
+- ``@RequiredArgsConstructor``: This annotation is used to generate a constructor with required arguments.
