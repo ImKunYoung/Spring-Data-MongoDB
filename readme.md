@@ -81,3 +81,31 @@ public class GroceryItem {
 
 <br/>
 
+```java
+package com.tobias.springdatamongodb.practice;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
+
+import java.util.List;
+
+public interface ItemRepository extends MongoRepository<GroceryItem, String> {
+
+    @Query("{ 'name' : ?0 }")
+    GroceryItem findByName(String name);
+
+    @Query(value = "{ 'category' : ?0 }", fields = "{ 'name' : 1, 'quantity' : 1 }")
+    List<GroceryItem> findAll(String category);
+
+    public long count();
+
+}
+```
+
+- ``MongoRepository``: This interface provides CRUD operations for the specified entity.
+- ``ItemRepository``: This is a repository interface that extends MongoRepository.
+- ``@Query``: This annotation is used to specify the query to be executed.
+- ``findByName``: This method will find a document by its name.
+- ``findAll``: This method will find all documents by its category.
+- ``count``: This method will count all documents.
+- ``GroceryItem``: This is a POJO class that will be mapped to a MongoDB document.
