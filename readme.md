@@ -109,3 +109,20 @@ public interface ItemRepository extends MongoRepository<GroceryItem, String> {
 - ``findAll``: This method will find all documents by its category.
 - ``count``: This method will count all documents.
 - ``GroceryItem``: This is a POJO class that will be mapped to a MongoDB document.
+
+<br/>
+
+----
+
+<br/>
+
+```properties
+spring.data.mongodb.uri=mongodb+srv://test:93414223@cluster0.3f1nxzq.mongodb.net/?retryWrites=true&w=majority
+spring.data.mongodb.database=mygrocerylist
+```
+
+- ``spring.data.mongodb.uri``: This property is used to specify the MongoDB connection URI.
+- ``spring.data.mongodb.database``: This property is used to specify the MongoDB database name.
+
+
+
